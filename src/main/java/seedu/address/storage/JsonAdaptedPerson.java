@@ -45,8 +45,8 @@ class JsonAdaptedPerson {
         this.email = email;
         this.address = address;
         this.remark = remark;
-        if (tags != null) {
-            this.tags.addAll(tags);
+        if (tagged != null) {
+            this.tags.addAll(tagged);
         }
     }
 
