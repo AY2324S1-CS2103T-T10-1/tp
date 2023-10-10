@@ -35,7 +35,7 @@ public class PersonCard extends UiPart<Region> {
     @FXML
     private Label phone;
     @FXML
-    private Label address;
+    private Label telegram;
     @FXML
     private Label email;
     @FXML
@@ -52,11 +52,18 @@ public class PersonCard extends UiPart<Region> {
         id.setText(displayedIndex + ". ");
         name.setText(person.getName().fullName);
         phone.setText(person.getPhone().value);
-        address.setText(person.getAddress().value);
+        telegram.setText(person.getTelegram().value);
         email.setText(person.getEmail().value);
         remark.setText(person.getRemark().value);
         person.getTags().stream()
                 .sorted(Comparator.comparing(tag -> tag.tagName))
                 .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
+        person.getMods().stream()
+                .sorted(Comparator.comparing(mod -> mod.tagName))
+                .forEach(mod -> {
+                    Label label = new Label(mod.tagName);
+                    label.setStyle("-fx-background-color: #FF8C00");
+                    tags.getChildren().add(label);
+                });
     }
 }
