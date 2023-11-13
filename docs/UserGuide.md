@@ -30,7 +30,7 @@ Don't let the stress of administrative work affect your teaching quality.
 
 Let TAManager handles all your TA management needs, while you power up your lectures and tutorials with your teaching prowess!
 
----
+<div style="page-break-after: always;"></div>
 
 ## Using this Guide
 
@@ -48,17 +48,12 @@ Throughout our user guide, you will see the following annotations:
 | [Text in blue](javascript: void)   | Clicking on the highlighted text will bring you to the relevant section of the user guide. |
 | `Text with light blue background`  | These are commands that you can type into TAManager.                                       |
 
-<br/>
-
----
-
+<div style="page-break-after: always;"></div>
 ## Table of Contents
 * Table of Contents
 {:toc}
 
-<br/>
-
----
+<div style="page-break-after: always;"></div>
 
 ## Quick Start
 
@@ -72,6 +67,13 @@ Throughout our user guide, you will see the following annotations:
    A GUI similar to the one below should appear in a few seconds. Note how the app contains some sample data.
    ![UI](images/Ui.png)
 
+<div style="page-break-after: always;"></div>
+
+<br/>
+
+<br/>
+
+{:start="5"}
 5. Type the command in the command box and press Enter to execute it. For example, typing `help` and pressing Enter will open the help window.
    Here are some example commands you can try:
 
@@ -89,8 +91,7 @@ Throughout our user guide, you will see the following annotations:
 
 <span style="display: flex; justify-content: right; font-size: 0.8em;">[BACK TO TOP](#table-of-contents)</span>
 
---------------------------------------------------------------------------------------------------------------------
-
+<div style="page-break-after: always;"></div>
 
 ## Command Format
 
@@ -118,7 +119,7 @@ Throughout our user guide, you will see the following annotations:
 
 <span style="display: flex; justify-content: right; font-size: 0.8em;">[BACK TO TOP](#table-of-contents)</span>
 
----
+<div style="page-break-after: always;"></div>
 
 ## Understanding Our GUI
 
@@ -133,7 +134,8 @@ Here are the various components of TAManager's GUI:
 
 <span style="display: flex; justify-content: right; font-size: 0.8em;">[BACK TO TOP](#table-of-contents)</span>
 
---------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div> 
+
 ## Commands 
 
 ## 1. TA Management Commands
@@ -163,16 +165,23 @@ add n/NAME p/PHONE e/EMAIL tele/TELEGRAM h/HOUR [t/TAG]... [c/COURSE_CODE]...
 ![add TA](images/addTA.png)
 *<center>TAManager adds a new teaching assistant with the corresponding details.</center>*
 
+<div style="page-break-after: always;"></div>
+
 <div markdown="block" class="command-succeed">
 <div class="alert alert-success">
 :heavy_check_mark: When the command succeeds:
 </div>
 ```
-New teaching assistant added: Rayner Toh; Phone: 93812311; Email: rayner@example.com; Telegram: @raynertjx;
-Free Time:  Tags: [parttime];
+New teaching assistant added: Rayner Toh; 
+Phone: 93812311; 
+Email: rayner@example.com; 
+Telegram: @raynertjx;
+Free Time:  
+Tags: [parttime];
 Courses:
 Name: Software Engineering
-Lessons: [CS2103T Lecture 10:00-12:00, CS2103T Tutorial 10:00-12:00, CS2103T Laboratory 10:00-12:00];
+Lessons: [CS2103T Lecture 10:00-12:00, CS2103T Tutorial 10:00-12:00, 
+CS2103T Laboratory 10:00-12:00];
 Work Hour: 4
 ```
 </div>
@@ -193,13 +202,16 @@ Work Hour: 4
 
 <span style="display: flex; justify-content: right; font-size: 0.8em;">[BACK TO TOP](#table-of-contents)</span>
 
+<div style="page-break-after: always;"></div>
+
 ### 1.2 Editing a Teaching Assistant: `edit`
 
 You can change the details of an existing teaching assistant in TAManager, so that you can keep the information in your contact list up-to-date.
 
 ##### Format: 
 ```
-edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [tele/TELEGRAM] [h/HOUR] [t/TAG]... [c/COURSE_CODE]...
+edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [tele/TELEGRAM] [h/HOUR] [t/TAG]... 
+[c/COURSE_CODE]...
 ```
 
 | Fields        | Format                                                                                 | Remarks                                                                                                    |
@@ -211,6 +223,8 @@ edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [tele/TELEGRAM] [h/HOUR] [t/TAG]... [c/C
 | `HOUR`        | Integer between 0 and 9999                                                             | Total working hours of the teaching assistant                                                              |
 | `TAG`         | Alphanumeric string without spaces                                                     | Tag(s) of the teaching assistant                                                                           |
 | `COURSE_CODE` | Starts with 2-3 alphabets, followed by 4 numbers, and optionally ends with an alphabet | Course code of the course the teaching assistant is teaching and it should be one of the available courses |
+
+<div style="page-break-after: always;"></div>
 
 <div markdown="block" class="alert alert-info">
 
@@ -225,6 +239,7 @@ edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [tele/TELEGRAM] [h/HOUR] [t/TAG]... [c/C
 ![edit TA](images/editTA.png)
 *<center>TAManager edits the Telegram handle of the 7th person in the list.</center>*
 
+<div style="page-break-after: always;"></div>
 
 <div markdown="block" class="command-succeed">
 <div class="alert alert-success">
@@ -261,6 +276,8 @@ Work Hour: 4
 
 <span style="display: flex; justify-content: right; font-size: 0.8em;">[BACK TO TOP](#table-of-contents)</span>
 
+<div style="page-break-after: always;"></div>
+
 ### 1.3 Viewing Teaching Assistants: `list`
 
 You can view the list of all teaching assistants in TAManager, so that you can conveniently browse through all the teaching assistants you are managing.
@@ -285,6 +302,8 @@ Listed all teaching assistants
 
 <span style="display: flex; justify-content: right; font-size: 0.8em;">[BACK TO TOP](#table-of-contents)</span>
 
+<div style="page-break-after: always;"></div>
+
 ### 1.4 Finding a Teaching Assistant: `find`
 
 You can find specific teaching assistants using various search parameters, so that you can quickly find the specific teaching assistant you are looking for.
@@ -302,6 +321,8 @@ find [n/NAME] [c/COURSE_CODE] [d/DAY from/FROM to/TO] [t/TAG]
 | `FROM`        | Time in "HH:mm" format                                                                 | Start time of the free time of the teaching assistant                                                      |
 | `TO`          | Time in "HH:mm" format                                                                 | End time of the free time of the teaching assistant                                                        |
 | `TAG`         | Alphanumeric string without spaces                                                     | Tag(s) of the teaching assistant                                                                           |
+
+<div style="page-break-after: always;"></div>
 
 <div markdown="block" class="alert alert-info">
 
@@ -350,6 +371,8 @@ Filters applied: [filters applied by the user]
 
 <span style="display: flex; justify-content: right; font-size: 0.8em;">[BACK TO TOP](#table-of-contents)</span>
 
+<div style="page-break-after: always;"></div>
+
 ### 1.5 Removing a Teaching Assistant: `delete`
 
 You can remove a specified teaching assistant from TAManager, so that you can remove TAs who are no longer part of your teaching team.
@@ -390,6 +413,7 @@ Work Hour: 4
 ```
 </div>
 
+<div style="page-break-after: always;"></div>
 
 <div markdown="block" class="command-fail">
 <div class="alert alert-danger">
@@ -404,6 +428,8 @@ Work Hour: 4
 </div>
 
 <span style="display: flex; justify-content: right; font-size: 0.8em;">[BACK TO TOP](#table-of-contents)</span>
+
+<div style="page-break-after: always;"></div>
 
 ### 1.6 Updating Hours for Teaching Assistants: `hour`
 
@@ -454,6 +480,8 @@ Hour updated to all TAs identified!
 
 <span style="display: flex; justify-content: right; font-size: 0.8em;">[BACK TO TOP](#table-of-contents)</span>
 
+<div style="page-break-after: always;"></div>
+
 ### 1.7 Editing free time of a Teaching Assistant: `editft`
 
 You can edit the free time of a specific teaching assistant on a specified day, so that you can keep the latest information of your teaching assistants' free time.
@@ -477,6 +505,8 @@ editft INDEX d/DAY from/FROM to/TO
 - After running the `editft` command on a filtered list, the TA list will be updated to the full list of TAs.
 </div>
 
+<div style="page-break-after: always;"></div>
+
 ##### Example:
 - `editft 1 d/2 from/13:00 to/15:00` updates the free time of the TA at index 1 to be Tuesday from 13:00 to 15:00.
 
@@ -491,6 +521,8 @@ editft INDEX d/DAY from/FROM to/TO
 Edited Teaching Assistant: [Details of TA specified]
 ```
 </div>
+
+<div style="page-break-after: always;"></div>
 
 <div markdown="block" class="command-fail">
 <div class="alert alert-danger">
@@ -507,6 +539,8 @@ Edited Teaching Assistant: [Details of TA specified]
 </div>
 
 <span style="display: flex; justify-content: right; font-size: 0.8em;">[BACK TO TOP](#table-of-contents)</span>
+
+<div style="page-break-after: always;"></div>
 
 ## 2. Course Management Commands
 
@@ -533,6 +567,8 @@ course c/COURSE_CODE
 |---------------|----------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
 | `COURSE_CODE` | Starts with 2-3 alphabets, followed by 4 numbers, and optionally ends with an alphabet | Course code of the course the teaching assistant is teaching and it should be one of the available courses |
 
+<div style="page-break-after: always;"></div>
+
 ##### Example: 
 - `course c/CS2103T` returns the course information and tutorial timings for CS2103T.
 
@@ -551,6 +587,8 @@ CS2103T Laboratory 10:00-12:00
 ```
 </div>
 
+<div style="page-break-after: always;"></div>
+
 <div markdown="block" class="command-fail">
 <div class="alert alert-danger">
 :x: When the command fails:
@@ -565,6 +603,8 @@ CS2103T Laboratory 10:00-12:00
 </div>
 
 <span style="display: flex; justify-content: right; font-size: 0.8em;">[BACK TO TOP](#table-of-contents)</span>
+
+<div style="page-break-after: always;"></div>
 
 ### 2.2 Adding a Default Course : `teach`
 
@@ -588,6 +628,8 @@ teach c/COURSE_CODE
 - The default course is saved even after you close the application.
 </div>
 
+<div style="page-break-after: always;"></div>
+
 ##### Example: 
 - `teach c/CS2103T` sets the default course to the course CS2103T.
 
@@ -603,6 +645,8 @@ CS2103T is successfully added as default course.
 ```
 </div>
 
+<div style="page-break-after: always;"></div>
+
 <div markdown="block" class="command-fail">
 <div class="alert alert-danger">
 :x: When the command fails:
@@ -617,6 +661,8 @@ CS2103T is successfully added as default course.
 </div>
 
 <span style="display: flex; justify-content: right; font-size: 0.8em;">[BACK TO TOP](#table-of-contents)</span>
+
+<div style="page-break-after: always;"></div>
 
 ### 2.3 Reset the Default Course : `clearteach`
 
@@ -634,6 +680,8 @@ clearteach
 ![clearteach command](images/clearTeach.png)
 *<center>TAManager successfully reset the default course.</center>*
 
+<div style="page-break-after: always;"></div>
+
 <div class="command-succeed">
 <div markdown="block" class="alert alert-success">
 :heavy_check_mark: When the command succeeds:
@@ -646,6 +694,8 @@ Default course has been cleared!
 </div>
 
 <span style="display: flex; justify-content: right; font-size: 0.8em;">[BACK TO TOP](#table-of-contents)</span>
+
+<div style="page-break-after: always;"></div>
 
 ## 3. Utility Commands
 
@@ -672,6 +722,8 @@ Opened help window.
 </div>
 
 <span style="display: flex; justify-content: right; font-size: 0.8em;">[BACK TO TOP](#table-of-contents)</span> 
+
+<div style="page-break-after: always;"></div>
 
 ### 3.2 Clearing All Entries : `clear`
 
@@ -710,7 +762,7 @@ exit
 
 <span style="display: flex; justify-content: right; font-size: 0.8em;">[BACK TO TOP](#table-of-contents)</span>
 
---------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
 
 ## Saving Your Data
 
@@ -743,7 +795,7 @@ If your changes to the data file makes its format invalid, TAManager will discar
 
 <span style="display: flex; justify-content: right; font-size: 0.8em;">[BACK TO TOP](#table-of-contents)</span>
 
---------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
 
 ## Glossary 
 
@@ -759,7 +811,8 @@ Example: When a user types `list` and presses Enter, the application will list a
 
 <span style="display: flex; justify-content: right; font-size: 0.8em;">[BACK TO TOP](#table-of-contents)</span>
 
---------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
+
 ## Known Issues
 <div markdown="span" class="alert alert-warning">
 **Issue:** When using multiple screens, TAManager does not open on the correct screen.
@@ -768,7 +821,8 @@ Example: When a user types `list` and presses Enter, the application will list a
 **Solution:** Delete the <code>preferences.json</code> file in the <code>data</code> folder and restart TAManager.
 </div>
 
---------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
+
 ## Command Summary
 Commands are arranged in alphabetical order for your easy reference.
 
