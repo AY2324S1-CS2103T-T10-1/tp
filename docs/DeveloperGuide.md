@@ -248,6 +248,8 @@ The following sequence diagram displays how updating hour Feature is implemented
 
 --------------------------------------------------------------------------------------------------------------------
 
+<div style="page-break-after: always;"></div>
+
 ## **Appendix: Requirements**
 
 ### Product scope
@@ -422,6 +424,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * **Availability**: The time slots a TA is available for teaching (e.g. 9am-12pm on Monday, 2pm-5pm on Tuesday)
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 
 ## **Appendix: Instructions for manual testing**
 
