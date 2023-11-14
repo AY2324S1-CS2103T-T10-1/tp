@@ -17,10 +17,6 @@ Refer to the guide [_Setting up and getting started_](SettingUp.md).
 
 ## **Design**
 
-<div markdown="span" class="alert alert-primary">
-
-:bulb: **Tip:** The `.puml` files used to create diagrams in this document `docs/diagrams` folder. Refer to the [_PlantUML Tutorial_ at se-edu/guides](https://se-education.org/guides/tutorials/plantUml.html) to learn how to create and edit diagrams.
-</div>
 
 ### Architecture
 
@@ -32,7 +28,7 @@ Given below is a quick overview of main components and how they interact with ea
 
 **Main components of the architecture**
 
-**`Main`** (consisting of classes [`Main`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/Main.java) and [`MainApp`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/MainApp.java)) is in charge of the app launch and shut down.
+**`Main`** (consisting of classes [`Main`](https://github.com/AY2324S1-CS2103T-T10-1/tp/blob/master/src/main/java/seedu/address/Main.java) and [`MainApp`](https://github.com/AY2324S1-CS2103T-T10-1/tp/blob/master/src/main/java/seedu/address/MainApp.java)) is in charge of the app launch and shut down.
 * At app launch, it initializes the other components in the correct sequence, and connects them up with each other.
 * At shut down, it shuts down the other components and invokes cleanup methods where necessary.
 
@@ -66,13 +62,13 @@ The sections below give more details of each component.
 
 ### UI component
 
-The **API** of this component is specified in [`Ui.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/Ui.java)
+The **API** of this component is specified in [`Ui.java`](https://github.com/AY2324S1-CS2103T-T10-1/tp/blob/master/src/main/java/seedu/address/ui/Ui.java)
 
 ![Structure of the UI Component](images/UiClassDiagram.png)
 
 The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `PersonListPanel`, `StatusBarFooter` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class which captures the commonalities between classes that represent parts of the visible GUI.
 
-The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the [`MainWindow`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/MainWindow.java) is specified in [`MainWindow.fxml`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/resources/view/MainWindow.fxml)
+The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the [`MainWindow`](https://github.com/AY2324S1-CS2103T-T10-1/tp/blob/master/src/main/java/seedu/address/ui/MainWindow.java) is specified in [`MainWindow.fxml`](https://github.com/AY2324S1-CS2103T-T10-1/tp/blob/master/src/main/resources/view/MainWindow.fxml)
 
 The `UI` component,
 
@@ -85,7 +81,7 @@ The `UI` component,
 
 ### Logic component
 
-**API** : [`Logic.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/logic/Logic.java)
+**API** : [`Logic.java`](https://github.com/AY2324S1-CS2103T-T10-1/tp/blob/master/src/main/java/seedu/address/logic/Logic.java)
 
 Here's a (partial) class diagram of the `Logic` component:
 
@@ -116,7 +112,7 @@ How the parsing works:
 <div style="page-break-after: always;"></div>
 
 ### Model component
-**API** : [`Model.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/model/Model.java)
+**API** : [`Model.java`](https://github.com/AY2324S1-CS2103T-T10-1/tp/blob/master/src/main/java/seedu/address/model/Model.java)
 
 <img src="images/ModelClassDiagram.png" width="550" />
 
@@ -137,7 +133,7 @@ The `Model` component,
 
 The `Storage` component,
 * can save address book data, user preference data and courses data in JSON format, and read them back into corresponding objects.
-* inherits from both `AddressBookStorage`, `UserPrefStorage` and `CoursesStorage`, which means it can be treated as any of them (if only the functionality of only one is needed).
+* inherits from `AddressBookStorage`, `UserPrefStorage` and `CoursesStorage`, which means it can be treated as any of them (if only the functionality of only one is needed).
 * depends on some classes in the `Model` component (because the `Storage` component's job is to save/retrieve objects that belong to the `Model`)
 
 ### Common classes
@@ -153,7 +149,7 @@ This section describes some noteworthy details on how certain features are imple
 
 ### Find Availability Feature
 
-**API** : [`FreeTime.java`](https://github.com/AY2324S1-CS2103T-T10-1/tp/blob/master/src/main/java/seedu/address/model/person/FreeTime.java)
+**API** : [`FreeTime.java`](https://github.com/AY2324S1-CS2103T-T10-1/tp/blob/master/src/main/java/seedu/address/model/availability/FreeTime.java)
 
 #### Implementation
 
@@ -212,7 +208,7 @@ course for the users and save it in UserPrefs.
 Hence, the next time users log into TAManager, the page will automatically display the
 TAs teaching under the users' course.
 
-The following sequence diagram displays how Teaching course Feature is implemented.
+The following sequence diagram displays how the teaching course feature is implemented.
 
 ![TeachingDiagram](images/TeachingDiagram.png)
 
@@ -451,28 +447,94 @@ testers are expected to do more *exploratory* testing.
    2. Re-launch the app.<br>
        Expected: The most recent window size and location is retained.
 
-3. Saving teaching course preferences
+### TA Management Commands
 
-   1. Type `teach t/cs2103t` in the command box and press Enter.<br>
-      Expected: The default teaching course is set to `CS2103T`.
+1. Adding a person
 
-   2. Close the window and re-launch the app.<br>
-      Expected: The default teaching course remains as `CS2103T` and list of TAs only contains those teaching CS2103T.
+   1. Test case: `add n/John Doe p/98765432 e/johnd@example.com tele/@johnd h/10 t/fulltime c/CS1231S`<br>
+        Expected: A person with the given details is added to the list. Person will be at the end of the list.
 
-### Deleting a person
+2. Editing a person while all persons are being shown
 
-1. Deleting a person while all persons are being shown
+   1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+
+   2. Test case: `edit 1 n/John Doe p/98765432`<br>
+   Expected: First contact is edited with the given details. Details of the edited contact shown in the command result box.
+   
+   3. Test case: `edit 0 n/John Doe p/98765432`<br>
+   Expected: No person is edited as 0 is an invalid index. Error details shown in the command result box.
+
+3. Deleting a person while all persons are being shown
 
    1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
 
    2. Test case: `delete 1`<br>
-      Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
+      Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message.
 
    3. Test case: `delete 0`<br>
       Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.
 
    4. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
       Expected: Similar to previous.
+
+4. Finding a person by free time while all persons are being shown
+
+    1. Prerequisites: List all persons using the `list` command. Multiple persons in the list. There is a person with free time on Monday from 12:00 to 14:00.
+
+    2. Test case: `find d/1 from/12:00 to/14:00`<br>
+       Expected: Persons with free time on Monday from 12:00 to 14:00 are shown in the list.
+
+    3. Test case: `find d/0 from/12:00 to/14:00`<br>
+        Expected: No person is found as 0 is an invalid day. Error details shown in the status message.
+
+    4. Test case: `find d/1 from/14:00 to/12:00`<br>
+        Expected: No person is found as the start time is after the end time. Error details shown in the status message.
+
+5. Updating hours of all persons
+
+    1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+
+    2. Test case: `hour 10`<br>
+       Expected: All persons' hours are increased by 10.
+
+6. Updating hours of selected persons
+
+    1. Prerequisites: Use the `find` command to find a list of persons. This list is not the full list of persons.
+
+    2. Test case: `hour 10`<br>
+       Expected: All persons' hours in the list are increased by 10. Run `list` command to see the full list of persons. The hours of the persons not in the filtered list remain unchanged.
+
+7. Updating free time of a person while all person are shown
+
+    1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+
+    2. Test case: `editft 1 d/1 from/12:00 to/14:00`<br>
+       Expected: First contact is edited with free time `12:00-14:00` on Monday. Details of the edited contact shown in the command result box.
+
+### Course Management Commands
+
+1. Viewing course information
+
+   1. Test case: `course`<br>
+      Expected: Invalid command format. List of available courses is shown.
+
+   2. Test case: `course c/cs2103t`<br>
+      Expected: Information of the course CS2103T is shown.
+
+2. Saving teaching course preferences
+
+    1. Type `teach t/cs2103t` in the command box and press Enter.<br>
+       Expected: The default teaching course is set to `CS2103T`. The title of the window includes `CS2103T`.
+
+    2. Close the window and re-launch the app.<br>
+       Expected: The default teaching course remains as `CS2103T` and list of TAs only contains those teaching `CS2103T`.
+
+3. Clearing teaching course preference
+
+    1. Prerequisite: Teaching course preference is set to `CS2103T`. 
+
+    2. Type `clearteach` in the command box and press Enter.<br>
+       Expected: The default teaching course is cleared. The title of the window no longer includes `CS2103T`.
 
 ### Saving data
 
@@ -488,3 +550,64 @@ testers are expected to do more *exploratory* testing.
 
    1. Delete `addressbook.json` and `courses.json` files.<br>
       Expected: New json files are created with sample data.
+
+--------------------------------------------------------------------------------------------------------------------
+
+## **Appendix: Effort**
+Overall, we are satisfied with our work in the team project and believe that we have put in a commensurate 
+amount of effort to 5 individual projects.
+
+The following are some of our achievements:
+
+1. Successfully adding and replacing simple fields (e.g. Telegram)
+
+Difficulty: **Easy**
+
+We started with these tasks to familiarise ourselves with the codebase and workflow.
+Overall, it was not difficult to add or remove simple fields, but there was some effort 
+in finding all instances of the field and updating them accordingly.
+
+2. Successfully adding the FreeTime field and corresponding findft command
+
+Difficulty: **Moderate**
+
+The representation of TAs' availability went through several iterations, especially
+with regards to how ot save the day of week. We eventually settled on using an array
+in the FreeTime object. The findft command had to be implemented from scratch in 
+finding TAs with the correct availability.
+
+3. Successfully implementing hour tracking features
+
+Difficulty: **Moderate**
+
+Though the Hour field is just a simple field, the hour command required us to work
+with the FilteredPersonList to update the hours of all TAs in the list. 
+
+4. Successfully representing courses in our app
+
+Difficulty: **Hard**
+
+This was the most challenging task as we had to come up with new architecture to
+model a Course with its corresponding details and Lessons. It was also challenging
+to navigate the storage system to create a `courses.json` file which advanced users
+could edit to add their own courses. While AB3 deals with only one entity type, 
+TAManager deals with two types which were also linked to each other.
+
+5. Successfully implementing default course features
+
+Difficulty: **Moderate**
+
+The default course feature required us to dive into the architecture of UserPrefs
+and the startup logic of the app. We had to ensure that the default course was
+saved and loaded correctly, and that the list of TAs was filtered correctly.
+
+6. Ensuring consistency between our product and the UG/DG
+
+Difficulty: **Easy**
+
+We went through many iterations of the UG and DG based on our own testing and 
+feedback from others. We wanted to make sure that the information they contained 
+are accurate and consistent with our product. Though it was not difficult, 
+it was a time-consuming process.
+    
+    
